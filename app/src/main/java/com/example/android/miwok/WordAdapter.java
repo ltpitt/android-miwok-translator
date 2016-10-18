@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -51,6 +52,20 @@ public class WordAdapter extends ArrayAdapter<Word>  {
 
         // Get the {@link Word} object located at this position in the list
         Word currentWord = getItem(position);
+
+        // Find the ImageView in the list_item.xml layout with the ID miwok_image_view.
+        ImageView miwokImageView = (ImageView) listItemView.findViewById(R.id.miwok_image_view);
+
+        // Check if an image was provided with this word or not
+        if (currentWord.hasImage()) {
+            // If an image is available, display the provided image based on the resource ID
+            miwokImageView.setImageResource(currentWord.getImageResourceId());
+            // Make sure the view is visible
+            miwokImageView.setVisibility(View.VISIBLE);
+        } else {
+            // Otherwise hide the ImageView (set visibility to GONE)
+            miwokImageView.setVisibility(View.GONE);
+        }
 
         // Find the TextView in the list_item.xml layout with the ID miwok_text_view.
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
