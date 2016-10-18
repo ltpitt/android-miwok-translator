@@ -54,7 +54,7 @@ public class WordAdapter extends ArrayAdapter<Word>  {
         Word currentWord = getItem(position);
 
         // Find the ImageView in the list_item.xml layout with the ID miwok_image_view.
-        ImageView miwokImageView = (ImageView) listItemView.findViewById(R.id.miwok_image_view);
+        ImageView miwokImageView = (ImageView) listItemView.findViewById(R.id.image);
 
         // Check if an image was provided with this word or not
         if (currentWord.hasImage()) {
