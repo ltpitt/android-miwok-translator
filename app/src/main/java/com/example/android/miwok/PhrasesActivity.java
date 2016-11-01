@@ -18,6 +18,7 @@ package com.example.android.miwok;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -61,6 +62,8 @@ public class PhrasesActivity extends AppCompatActivity {
         // Make the {@link ListView} use the {@link WordAdapter} we created above, so that the
         // {@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
+
+        Log.v("PhrasesActivity", "Current word: " + word);
 
         // Set a click listener to play the audio when the list item is clicked on
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
