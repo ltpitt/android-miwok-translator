@@ -76,6 +76,14 @@ public class ColorsActivity extends AppCompatActivity {
 
                 // Start the audio file
                 mMediaPlayer.start();
+
+                // Callback when the audio is completely played
+                mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    public void onCompletion(MediaPlayer mp) {
+                        Log.d("NumbersActivity","Audio play is now complete");
+                    }
+                });
+
             }
         });
     }
